@@ -1,14 +1,14 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-const BookCard = ({ Id, Titulo, Qtd, status, onActionPress }) => {
+const BookCard = ({ Id, Titulo, Autor, AnoLancamento, Qtd, status, onActionPress }) => {
   return (
     <View style={styles.card}>
+      <Text style={styles.description}>{Id}</Text>
       <View style={styles.header}>
-        <Text style={styles.title}>{Id}</Text>
+        <Text style={styles.title}>Titulo: {Titulo}</Text>
       </View>
-      <Text style={styles.description}>{Titulo}</Text>
-      <Text style={styles.description}>{Qtd}</Text>
+      <Text style={styles.description}>Quantidade: {Qtd}</Text>
       <TouchableOpacity style={styles.button} onPress={onActionPress}>
         <Text style={styles.buttonText}>VER</Text>
       </TouchableOpacity>
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
   },
   done: {
     width: 24,
-    height: 24, 
+    height: 24,
   },
 });
 
