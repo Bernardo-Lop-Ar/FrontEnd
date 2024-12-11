@@ -8,84 +8,87 @@ import { useEffect, useState } from "react";
 import BookCard from "./BookCard";
 
 export default function HomePage() {
-    return(
-        <View style={styles.container}>
-          <View style={styles.navigator}>
-          <TouchableOpacity style={styles.button} onPress={() => {
-                router.push({
-                  pathname: "/inicio",
-                })
-              }}>
-                  <Text style={styles.buttonText}>INICIO</Text>
-              </TouchableOpacity>
-  
-              <TouchableOpacity style={styles.button} onPress={() => {
-                router.push({
-                  pathname: "/livros",
-                })
-              }}>
-              <Text style={styles.buttonText}>LIVROS</Text>
-              </TouchableOpacity>
-  
-              <TouchableOpacity style={styles.button} onPress={() => {
-                router.push({
-                  pathname: "/creditos",
-                })
-              }}>
-                  <Text style={styles.buttonText}>CRÉDITOS</Text>
-              </TouchableOpacity>
-            
-          </View>
-        
-        <View style={styles.title}>
-              
-        </View>
-              <Text style={styles.title}>BIBLIOTECA TOP</Text>
+  return (
+    <View style={styles.container}>
+      <View style={styles.navigator}>
+        <TouchableOpacity style={styles.button} onPress={() => {
+          router.push({
+            pathname: "/inicio",
+          })
+        }}>
+          <Text style={styles.buttonText}>INICIO</Text>
+        </TouchableOpacity>
 
-        </View>
-      )
+        <TouchableOpacity style={styles.button} onPress={() => {
+          router.push({
+            pathname: "/livros",
+          })
+        }}>
+          <Text style={styles.buttonText}>LIVROS</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button} onPress={() => {
+          router.push({
+            pathname: "/creditos",
+          })
+        }}>
+          <Text style={styles.buttonText}>CRÉDITOS</Text>
+        </TouchableOpacity>
+
+      </View>
+
+
+      <View style={styles.container}>
+      <Text style={styles.title}>BIBLIOTECA</Text>
+      </View>
+
+      
+
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      alignItems: "center",
-      padding: 24,
-    },
-    main: {
-      flex: 1,
-      justifyContent: "center",
-      maxWidth: 960,
-      marginHorizontal: "auto",
-    },
-    title: {
-      fontSize: 64,
-      fontWeight: "bold",
-    },
-    subtitle: {
-      fontSize: 36,
-      color: "#38434D",
-    },
-    navigator: { 
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      marginBottom: 10,
+  container: {
+    flex: 1,
+    alignItems: "center",
+    padding: 24,
   },
-    button: {
-      backgroundColor: '#6495ED',
-      paddingVertical: 10,
-      alignItems: 'center',
-      width: 100,
-      margin: 10,
-    },
-    buttonText: {
-      color: '#fff',
-      fontSize: 16,
-      fontWeight: 'bold',
-    },
-    description: {
-        fontSize: 14,
-        color: '#fff',
-    }
-  });
+  main: {
+    flex: 1,
+    justifyContent: "center",
+    maxWidth: 960,
+    marginHorizontal: "auto",
+  },
+  title: {
+    fontSize: 60,
+    fontWeight: "bold",
+    alignItems: 'center'
+  },
+  subtitle: {
+    fontSize: 36,
+    color: "#38434D",
+  },
+  navigator: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  button: {
+    backgroundColor: '#6495ED',
+    paddingVertical: 10,
+    alignItems: 'center',
+    width: 100,
+    margin: 10,
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  description: {
+    fontSize: 14,
+    color: '#fff',
+  }
+});

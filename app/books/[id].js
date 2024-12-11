@@ -70,6 +70,8 @@ export default function BooksPage() {
 
 
             </View>
+
+
             <View style={styles.card}>
                 <View style={styles.card}>
                     <View style={styles.header}>
@@ -206,9 +208,5 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontSize: 16,
         fontWeight: 'bold',
-      },
-      description: {
-          fontSize: 14,
-          color: '#fff',
       }
 });
