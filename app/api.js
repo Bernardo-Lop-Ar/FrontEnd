@@ -38,7 +38,7 @@ export const getRequest = async () => {
   
       const textData = await response.text();
       const data = JSON.parse(textData);
-      console.log(data);
+
       return data;
     } catch (error) {
       console.error("Error during GET request:", error);
@@ -49,11 +49,11 @@ export const getRequest = async () => {
   export const postRequest = async (id, nome, anoNasc) => {
     try {
       let myBody = {
-        Id: id,
-        Nome: nome,
-        AnoNasc: anoNasc,
+        id: id,
+        nome: nome,
+        anoNasc: anoNasc,
       };
-  
+      
       const response = await fetch(BASE_URL, {
         method: "POST",
         headers: {
@@ -61,13 +61,14 @@ export const getRequest = async () => {
         },
         body: JSON.stringify(myBody),
       });
-  
+      
       if (!response.ok) {
         throw new Error(`POST request failed with status: ${response.status}`);
       }
   
       const textData = await response.text();
-      return JSON.parse(textData);
+      const data = JSON.parse(textData);
+      return data;
     } catch (error) {
       console.error("Error during POST request:", error);
       throw error;

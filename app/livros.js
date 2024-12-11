@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View, TouchableOpacity, Button } from "react-native";
 import React from 'react';
 import { Pressable } from 'react-native';
 import { router } from 'expo-router';
@@ -26,6 +26,33 @@ export default function Page() {
 
     return (
       <View style={styles.container}>
+        <View style={styles.navigator}>
+        <TouchableOpacity style={styles.button} onPress={() => {
+              router.push({
+                pathname: "/inicio",
+              })
+            }}>
+                <Text style={styles.buttonText}>INICIO</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.button} onPress={() => {
+              router.push({
+                pathname: "/livros",                
+              })
+            }}>
+            <Text style={styles.buttonText}>LIVROS</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.button} onPress={() => {
+              router.push({
+                pathname: "/creditos",
+              })
+            }}>
+                <Text style={styles.buttonText}>CRÉDITOS</Text>
+            </TouchableOpacity>
+          
+        </View>
+      
 
       {Biblioteca.length > 0 ? <View style={styles.separator} /> : <></>}
 
@@ -69,4 +96,26 @@ const styles = StyleSheet.create({
     fontSize: 36,
     color: "#38434D",
   },
+  navigator: { 
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 10,
+},
+  button: {
+    backgroundColor: '#6495ED',
+    paddingVertical: 10,
+    alignItems: 'center',
+    width: 100,
+    margin: 10,
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  description: {
+      fontSize: 14,
+      color: '#fff',
+  }
 });

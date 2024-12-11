@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-const BookCard = ({ Id, Titulo, Autor, AnoLancamento, Qtd, status, onActionPress }) => {
+const BookCard = ({ Id, Titulo, Qtd, status, onActionPress }) => {
   return (
     <View style={styles.card}>
       <Text style={styles.description}>{Id}</Text>
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   button: {
-    backgroundColor: '#d33f49',
+    backgroundColor: '#6495ED',
     paddingVertical: 10,
     borderRadius: 5,
     alignItems: 'center',
